@@ -14,6 +14,14 @@ require 'csv'
 # CSV.foreach(Rails.root.join('db/seeds/csv/typeservice.csv'), headers: true) do |row|
 #   Typeservice.create! do |type_service|
 #     type_service.id = row[0]
-#     type_serviceexit.name = row[1]
+#     type_service.name = row[1]
 #   end
 # end
+
+puts 'Importing typestate...'
+CSV.foreach(Rails.root.join('db/seeds/csv/typestate.csv'), headers: true) do |row|
+  Typestate.create! do |type_state|
+    type_state.id = row[0]
+    type_state.name = row[1]
+  end
+end

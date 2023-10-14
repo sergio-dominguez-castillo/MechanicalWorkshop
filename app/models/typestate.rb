@@ -1,0 +1,2 @@
+class Typestate < ApplicationRecord
+end

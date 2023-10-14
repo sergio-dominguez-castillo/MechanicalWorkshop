@@ -1,0 +1,4 @@
+type_state_id,name
+1,recepcionado
+2,en progreso
+3,finalizado
