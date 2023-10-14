@@ -8,6 +8,9 @@
 #  updated_at :datetime         not null
 #
 class Replacement < ApplicationRecord
+    # Relaciones
+    has_many :Repairreplacement, dependent: :destroy
+    has_many :repairs, through: :Repairreplacement
     #Validaciones
     validates :name,    presence: true, uniqueness: true
 end

@@ -65,6 +65,6 @@ class RepairsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def repair_params
-      params.require(:repair).permit(:user_id, :customer_id, :vehicle_id, :typestate_id, :estimateddate, :description)
+      params.require(:repair).permit(:user_id, :customer_id, :vehicle_id, :typestate_id, :estimateddate, :description, replacement_id: [], typeservice_id: [])
     end
 end

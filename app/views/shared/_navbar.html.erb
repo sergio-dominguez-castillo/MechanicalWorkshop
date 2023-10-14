@@ -21,6 +21,26 @@
                  <li class="nav-item">
                  <%= link_to "Working Hours", workinghour_path, class: 'nav-link' %>
                 </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Administrativa
+                    </a>
+                    <ul class="dropdown-menu">
+                        <%# <li><a class="dropdown-item" href="#">Index</a></li> %>
+                        <li class="dropdown-item">
+                        <%= link_to "Index_Taller", repairs_path, class: 'nav-link' %>
+                        </li>
+                        <li class="dropdown-item">
+                        <%= link_to "Customer", customers_path, class: 'nav-link' %>
+                        </li>
+                        <li class="dropdown-item">
+                        <%= link_to "Vehicle", vehicles_path, class: 'nav-link' %>
+                        </li>
+                    </ul>
+                    </li>
+
+                
             </ul>
 
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">

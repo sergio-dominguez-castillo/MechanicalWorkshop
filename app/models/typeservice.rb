@@ -8,6 +8,10 @@
 #  updated_at :datetime         not null
 #
 class Typeservice < ApplicationRecord
+    # Relaciones
+    has_many :Repairtypeservice, dependent: :destroy
+    has_many :repairs, through: :Repairtypeservice
+
     #Validaciones
     validates :name,    presence: true, uniqueness: true
 end

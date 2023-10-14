@@ -13,7 +13,8 @@
 
   <div>
     <%= form.label :user_id, style: "display: block" %>
-   <%= form.collection_select :user_id, User.all, :id, :name %>
+    <%= form.text_field :user_id %>
+    <%#= form.collection_select :user_id, User.all, :id, :name %>
   </div>
 
   <div>
@@ -41,13 +42,25 @@
   </div>
 
   <div>
+    <%= form.label :replacements, style: "display: block" %>
+    <%= form.collection_check_boxes :replacement_ids, Replacement.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= form.label :typeservices, style: "display: block" %>
+    <%= form.collection_check_boxes :typestate_id, Typeservice.all, :id, :name %>
+  </div>
+
+  
+
+  <div>
     <%= form.label :estimateddate, style: "display: block" %>
-    <%= form.text_field :estimateddate %>
+    <%= form.text_field :estimateddate,  required: true%>
   </div>
 
   <div>
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description,  required: true%>
   </div>
 
   <div>

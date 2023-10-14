@@ -18,7 +18,22 @@
     <strong>Typestate:</strong>
     <%= repair.typestate_id %>
   </p>
+    
 
+    
+    <p>
+      <strong>Replacement:</strong>
+      <%= repair.replacement_ids.each do |item| %>
+        <%= content_tag :span, item.name, class: "tag"  %>
+      <% end %>
+    </p>
+    <p>
+      <strong>Typeservice:</strong>
+      <%= repair.typeservices.each do |item| %>
+        <%= content_tag :span, item.name, class: "tag"  %>
+      <% end %>
+    </p>
+     
   <p>
     <strong>Estimateddate:</strong>
     <%= repair.estimateddate %>

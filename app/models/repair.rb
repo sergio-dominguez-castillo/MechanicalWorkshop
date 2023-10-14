@@ -18,6 +18,16 @@ class Repair < ApplicationRecord
   belongs_to :vehicle
   belongs_to :typestate
 
+  # Relaciones
+  has_many :Repairtypeservice, dependent: :destroy
+  has_many :typeservices, through: :Repairtypeservice
+
+  # Relaciones
+  has_many :Repairreplacement, dependent: :destroy
+  has_many :replacements, through: :Repairreplacement
+
+
+
   #Validaciones
   validates :estimateddate,    presence: true
   validates :description,    presence: true
