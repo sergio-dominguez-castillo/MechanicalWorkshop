@@ -25,3 +25,11 @@ require 'csv'
 #     type_state.name = row[1]
 #   end
 # end
+
+# puts 'Importing replacement...'
+# CSV.foreach(Rails.root.join('db/seeds/csv/replacement.csv'), headers: true) do |row|
+#   Replacement.create! do |replacement|
+#     replacement.id = row[0]
+#     replacement.name = row[1]
+#   end
+# end
