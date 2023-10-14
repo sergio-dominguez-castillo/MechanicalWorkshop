@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'pages/home'
-  get 'pages/service'
-  get 'pages/workinghour'
-  get 'pages/contact'
+
+
+  # Paginas estaticas
+  get '/home', to: 'pages#home'
+  get '/service', to: 'pages#service'
+  get '/workinghour', to: 'pages#workinghour'
+  get '/contact', to: 'pages#contact'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -11,5 +14,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "pages#home"
 end
