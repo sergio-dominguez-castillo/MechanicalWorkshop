@@ -8,4 +8,6 @@
 #  updated_at :datetime         not null
 #
 class Replacement < ApplicationRecord
+    #Validaciones
+    validates :name,    presence: true, uniqueness: true
 end

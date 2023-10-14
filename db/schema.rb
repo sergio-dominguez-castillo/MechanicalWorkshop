@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_14_100632) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_14_113317) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +29,39 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_14_100632) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "repairreplacements", force: :cascade do |t|
+    t.bigint "repair_id", null: false
+    t.bigint "replacement_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["repair_id"], name: "index_repairreplacements_on_repair_id"
+    t.index ["replacement_id"], name: "index_repairreplacements_on_replacement_id"
+  end
+
+  create_table "repairs", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "customer_id", null: false
+    t.bigint "vehicle_id", null: false
+    t.bigint "typestate_id", null: false
+    t.string "estimateddate"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_repairs_on_customer_id"
+    t.index ["typestate_id"], name: "index_repairs_on_typestate_id"
+    t.index ["user_id"], name: "index_repairs_on_user_id"
+    t.index ["vehicle_id"], name: "index_repairs_on_vehicle_id"
+  end
+
+  create_table "repairtypeservices", force: :cascade do |t|
+    t.bigint "repair_id", null: false
+    t.bigint "typeservice_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["repair_id"], name: "index_repairtypeservices_on_repair_id"
+    t.index ["typeservice_id"], name: "index_repairtypeservices_on_typeservice_id"
   end
 
   create_table "replacements", force: :cascade do |t|
@@ -72,5 +105,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_14_100632) do
     t.index ["customer_id"], name: "index_vehicles_on_customer_id"
   end
 
+  add_foreign_key "repairreplacements", "repairs"
+  add_foreign_key "repairreplacements", "replacements"
+  add_foreign_key "repairs", "customers"
+  add_foreign_key "repairs", "typestates"
+  add_foreign_key "repairs", "users"
+  add_foreign_key "repairs", "vehicles"
+  add_foreign_key "repairtypeservices", "repairs"
+  add_foreign_key "repairtypeservices", "typeservices"
   add_foreign_key "vehicles", "customers"
 end
