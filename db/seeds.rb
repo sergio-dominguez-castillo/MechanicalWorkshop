@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+require 'csv'
+
+# puts 'Importing typeservice...'
+# CSV.foreach(Rails.root.join('db/seeds/csv/typeservice.csv'), headers: true) do |row|
+#   Typeservice.create! do |type_service|
+#     type_service.id = row[0]
+#     type_serviceexit.name = row[1]
+#   end
+# end

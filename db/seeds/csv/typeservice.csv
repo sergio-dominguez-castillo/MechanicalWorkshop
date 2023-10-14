@@ -1,0 +1,9 @@
+type_service_id,name
+1,servicio de mantenimiento
+2,servicio de afinacion
+3,servicio de cambio de neumaticos
+4,servicio de alineado y balance
+5,servicio de cambio de aceite y filtro
+6,servicio de cambio de bateria
+7,servicio de cambio de luces
+8,servicio de limpieza especializada
