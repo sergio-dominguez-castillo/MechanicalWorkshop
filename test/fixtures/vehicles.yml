@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  carbrand: MyString
+  carmodel: MyString
+  patent: MyString
+  year: MyString
+  customer: one
+
+two:
+  carbrand: MyString
+  carmodel: MyString
+  patent: MyString
+  year: MyString
+  customer: two

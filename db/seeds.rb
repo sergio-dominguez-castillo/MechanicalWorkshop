@@ -18,10 +18,10 @@ require 'csv'
 #   end
 # end
 
-puts 'Importing typestate...'
-CSV.foreach(Rails.root.join('db/seeds/csv/typestate.csv'), headers: true) do |row|
-  Typestate.create! do |type_state|
-    type_state.id = row[0]
-    type_state.name = row[1]
-  end
-end
+# puts 'Importing typestate...'
+# CSV.foreach(Rails.root.join('db/seeds/csv/typestate.csv'), headers: true) do |row|
+#   Typestate.create! do |type_state|
+#     type_state.id = row[0]
+#     type_state.name = row[1]
+#   end
+# end
