@@ -7,7 +7,4 @@ class PagesController < ApplicationController
 
   def workinghour
   end
-
-  def contact
-  end
 end
